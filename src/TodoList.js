@@ -1,11 +1,9 @@
-//rafce を入力しtab変換すると以下か表示される
+import Todo from './Todo' // importしておく
 
-//import React from 'react'; これはなくてもOK![](https://storage.googleapis.com/zenn-user-upload/358cf26befcb-20230118.png)
-
-const TodoList = () => {
+const TodoList = ({todos, handleTodoClick}) => {
   return (
-    <div>TodoListコンポーネント</div>
-  )
-}
+    todos.map((todo) => <Todo todo={todo} key={todo.id} handleTodoClick={handleTodoClick}/>)
+    );
+};
 
-export default TodoList
+export default TodoList;
